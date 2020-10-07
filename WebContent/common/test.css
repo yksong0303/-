@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+* {
+	margin: auto;
+	padding: 0;
+}
+
+ul  {
+	background-color: skyblue;
+	list-style-type: none; /* ui랑 li앞에 붙은 점 다 사라짐 */
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	
+	margin: 15px; /* li간의 간격 */
+	float: left; /* li를 왼쪽으로 늘어트림 */
+}
+
+header {
+	text-align: center;
+	color: white; 
+	background-color: #2134e2;
+	height: 50px;
+}
+h1 { font-size : 35px;
+	color: white;
+	height: 100%;
+	width: 100%;
+	animation: color-animation on 1s black;
+}
+
+section {
+	clear: both;
+	height: 490px;
+	background-color: #eddbff;
+	
+}
+h3{
+	text-align: center;
+}
+
+footer {
+	bottom: 0px;
+	text-align: center;
+	background-color: #2134e2;
+}
+table { 
+	margin:auto;
+	letter-spacing: : 100px;
+	
+}
+table, td, th{
+	text-align: center;
+}
