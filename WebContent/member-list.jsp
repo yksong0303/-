@@ -53,7 +53,7 @@
 				while (rs.next()) { //null이 나올때까지 while문 돌림
 			%>
 			<tr>
-				<th><%=rs.getInt("custno")%></th>
+				<th><a href="<%=rPath%>/member-update.jsp?custno=<%=rs.getInt("custno")%>"><%=rs.getInt("custno")%></a></th>
 				<th><%=rs.getString("custname")%></th>
 				<th><%=rs.getString("phone")%></th>
 				<th><%=rs.getString("address")%></th>

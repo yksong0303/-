@@ -30,6 +30,7 @@
 	<section>
 	<h3>홈쇼핑 회원 등록</h3>
 <%
+String custno="";
 request.setCharacterEncoding("utf-8");
 if(request.getParameter("custname")!=null){
 	String custname = request.getParameter("custname");
@@ -54,6 +55,15 @@ if(request.getParameter("custname")!=null){
 		out.write("alert('회원 등록이 완료 되었습니다!')");
 		out.write("</script>"); 
 	}
+}else{
+	String sql = "select seq_custno.nextval from dual";
+	Connection con = Connector.getConnection();
+	PreparedStatement ps = con.prepareStatement(sql);
+	ResultSet rs = ps.executeQuery();
+
+	if(rs.next()){
+		custno = rs.getString(1);
+	}
 }
 
 %>	
@@ -61,7 +71,7 @@ if(request.getParameter("custname")!=null){
 		<table border="1">
 			<tr>
 				<th>회원번호(자동발생)</th>
-				<td><input type="text" name="custno" value="<%=request.getParameter("seq_custno.nextval")%>"></td>
+				<td><input type="text" name="custno" value="<%=custno%>"></td>
 			</tr>
 			<tr>
 				<th>회원성명</th>
